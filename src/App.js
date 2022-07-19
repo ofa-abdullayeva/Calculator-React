@@ -8,7 +8,9 @@ function App() {
 /*kod analizi */
   const updateCalc = value => {
     if (
+      // eslint-disable-next-line no-mixed-operators
       ops.includes(value) && calc === '' ||
+      // eslint-disable-next-line no-mixed-operators
       ops.includes(value) && ops.includes(calc.slice(-1)
       )
     ) {
@@ -17,12 +19,14 @@ function App() {
 
     setcalc(calc + value);
     if(!ops.includes(value)){
+      // eslint-disable-next-line no-eval
       setResult(eval(calc + value).toString());
     }
 
   }
 
   const calculate = () =>{
+    // eslint-disable-next-line no-eval
     setcalc(eval(calc).toString());
   }
 
@@ -36,6 +40,7 @@ function App() {
     setcalc(value);
   }
 
+  
 
   const createDigits = () => {
     const digits = [];
@@ -75,7 +80,7 @@ function App() {
           <button onClick={calculate}>=</button>
 
 
-          <button>DEL</button>
+       
         </div>
       </div>
 
